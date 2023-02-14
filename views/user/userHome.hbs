@@ -1,0 +1,60 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Icecream Cart</a>
+      <button
+        type="button"
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="#" class="nav-item nav-link active">Home</a>
+          <a href="#" class="nav-item nav-link">Profile</a>
+          <a href="#" class="nav-item nav-link">Messages</a>
+          <a
+            href="#"
+            class="nav-item nav-link disabled"
+            tabindex="-1"
+          >Reports</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          {{#if User}}
+
+            <a href="#" class="nav-item nav-link">{{User.name}}</a>
+          {{else}}
+            <a href="#" class="nav-item nav-link">Account</a>
+          {{/if}}
+        </div>
+        <div class="navbar-nav ms-auto">
+
+          <a href="/logout" class="nav-item nav-link">Logout</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row mt-4 gap-5">
+      {{#each items}}
+        <div
+          class="card bg-warning"
+          style="width: 18rem; border: 2px solid grey; "
+        >
+          <img src={{this.image}} class="card-img-top image" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-white">{{this.name}}</h5>
+            <p class="card-text text-white">{{this.description}} </p>
+            <a href="#" class="btn btn-info">Buy Now</a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
